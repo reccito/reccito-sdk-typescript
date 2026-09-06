@@ -1,0 +1,170 @@
+> **⚠️ Pre-release (0.x).** This SDK is machine-generated from Reccito's
+> public OpenAPI spec. The API surface may still change between 0.x
+> releases without a major-version bump. Do not hand-edit files in this
+> repo -- changes will be silently overwritten on the next generation
+> pass.
+
+---
+
+# @reccito/sdk@0.1.0
+
+A TypeScript SDK client for the api.reccito.com API.
+
+## Usage
+
+First, install the SDK from npm.
+
+```bash
+npm install @reccito/sdk --save
+```
+
+Next, try it out.
+
+
+```ts
+import {
+  Configuration,
+  MerchantAssetsApi,
+} from '@reccito/sdk';
+import type { ListOrganisationAssetsRequest } from '@reccito/sdk';
+
+async function example() {
+  console.log("🚀 Testing @reccito/sdk SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: ApiKeyAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new MerchantAssetsApi(config);
+
+  const body = {
+    // string (optional)
+    assetType: assetType_example,
+  } satisfies ListOrganisationAssetsRequest;
+
+  try {
+    const data = await api.listOrganisationAssets(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+
+## Documentation
+
+### API Endpoints
+
+All URIs are relative to *https://api.reccito.com*
+
+| Class | Method | HTTP request | Description
+| ----- | ------ | ------------ | -------------
+*MerchantAssetsApi* | [**listOrganisationAssets**](docs/MerchantAssetsApi.md#listorganisationassets) | **GET** /api/v1/merchant/assets/list | List organisation assets
+*MerchantAssetsApi* | [**uploadOrganisationBanner**](docs/MerchantAssetsApi.md#uploadorganisationbanner) | **POST** /api/v1/merchant/assets/upload/banner | Upload organisation banner
+*MerchantAssetsApi* | [**uploadOrganisationLogo**](docs/MerchantAssetsApi.md#uploadorganisationlogo) | **POST** /api/v1/merchant/assets/upload/logo | Upload organisation logo
+*MerchantAssetsApi* | [**uploadStoreLogo**](docs/MerchantAssetsApi.md#uploadstorelogo) | **POST** /api/v1/merchant/assets/upload/store/logo | Upload store logo
+*MerchantReceiptsApi* | [**createReceipt**](docs/MerchantReceiptsApi.md#createreceipt) | **POST** /api/v1/merchant/receipts | Create Receipt
+*MerchantReceiptsApi* | [**getReceipt**](docs/MerchantReceiptsApi.md#getreceipt) | **GET** /api/v1/merchant/receipts/{receipt_id} | Get Receipt
+*MerchantReceiptsApi* | [**listReceipts**](docs/MerchantReceiptsApi.md#listreceipts) | **GET** /api/v1/merchant/receipts | List Receipts
+*MerchantReceiptsApi* | [**refreshReceiptQr**](docs/MerchantReceiptsApi.md#refreshreceiptqr) | **PUT** /api/v1/merchant/receipts/{receipt_id}/refresh-qr | Refresh Qr Code
+*MerchantStoresApi* | [**createStore**](docs/MerchantStoresApi.md#createstore) | **POST** /api/v1/merchant/stores | Create Store
+*MerchantStoresApi* | [**getStore**](docs/MerchantStoresApi.md#getstore) | **GET** /api/v1/merchant/stores/{store_id} | Get Store
+*MerchantStoresApi* | [**getStoreStats**](docs/MerchantStoresApi.md#getstorestats) | **GET** /api/v1/merchant/stores/{store_id}/stats | Get Store Stats
+*MerchantStoresApi* | [**listStores**](docs/MerchantStoresApi.md#liststores) | **GET** /api/v1/merchant/stores | List Stores
+*MerchantStoresApi* | [**updateStore**](docs/MerchantStoresApi.md#updatestore) | **PUT** /api/v1/merchant/stores/{store_id} | Update Store
+
+
+### Models
+
+- [Barcode](docs/Barcode.md)
+- [ErrorDetail](docs/ErrorDetail.md)
+- [HTTPValidationError](docs/HTTPValidationError.md)
+- [LocationInner](docs/LocationInner.md)
+- [MerchantDetails](docs/MerchantDetails.md)
+- [MerchantReceiptResponse](docs/MerchantReceiptResponse.md)
+- [ModelApiResponse](docs/ModelApiResponse.md)
+- [OfferPolicyInfo](docs/OfferPolicyInfo.md)
+- [PaginationInfo](docs/PaginationInfo.md)
+- [PaymentInfoCreate](docs/PaymentInfoCreate.md)
+- [PaymentInfoResponse](docs/PaymentInfoResponse.md)
+- [QRRefreshResponse](docs/QRRefreshResponse.md)
+- [ReceiptAdjustment](docs/ReceiptAdjustment.md)
+- [ReceiptCreate](docs/ReceiptCreate.md)
+- [ReceiptImmediateResponse](docs/ReceiptImmediateResponse.md)
+- [ReceiptInsights](docs/ReceiptInsights.md)
+- [ReceiptItemCreate](docs/ReceiptItemCreate.md)
+- [ReceiptItemResponse](docs/ReceiptItemResponse.md)
+- [ReceiptListResponse](docs/ReceiptListResponse.md)
+- [ReceiptSummary](docs/ReceiptSummary.md)
+- [ReturnInsights](docs/ReturnInsights.md)
+- [StoreCreate](docs/StoreCreate.md)
+- [StoreListResponse](docs/StoreListResponse.md)
+- [StoreResponse](docs/StoreResponse.md)
+- [StoreStatsResponse](docs/StoreStatsResponse.md)
+- [StoreUpdate](docs/StoreUpdate.md)
+- [TransactionReference](docs/TransactionReference.md)
+- [ValidationError](docs/ValidationError.md)
+- [WarrantyInfo](docs/WarrantyInfo.md)
+
+### Authorization
+
+
+Authentication schemes defined for the API:
+<a id="ApiKeyAuth"></a>
+#### ApiKeyAuth
+
+
+- **Type**: HTTP Bearer Token authentication (API Key)
+
+## About
+
+This TypeScript SDK client supports the [Fetch API](https://fetch.spec.whatwg.org/)
+and is automatically generated by the
+[OpenAPI Generator](https://openapi-generator.tech) project:
+
+- API version: `1.0.0`
+- Package version: `0.1.0`
+- Generator version: `7.24.0`
+- Build package: `org.openapitools.codegen.languages.TypeScriptFetchClientCodegen`
+
+The generated npm module supports the following:
+
+- Environments
+  * Node.js
+  * Webpack
+  * Browserify
+- Language levels
+  * ES5 - you must have a Promises/A+ library installed
+  * ES6
+- Module systems
+  * CommonJS
+  * ES6 module system
+
+For more information, please visit [https://reccito.com/support](https://reccito.com/support)
+
+## Development
+
+### Building
+
+To build the TypeScript source code, you need to have Node.js and npm installed.
+After cloning the repository, navigate to the project directory and run:
+
+```bash
+npm install
+npm run build
+```
+
+### Publishing
+
+Once you've built the package, you can publish it to npm:
+
+```bash
+npm publish
+```
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT)
